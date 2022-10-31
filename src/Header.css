@@ -11,7 +11,7 @@
     
 }
 
-.Header img{
+.img1{
     width: 3.5rem;
     height:3.5rem;
     display:inline-block;
@@ -20,7 +20,7 @@
     align-self: center;
 }
 
-.Header ul{
+.ulMenu{
     width: 40%;
     justify-self: end;
     list-style: none;
@@ -34,9 +34,7 @@
     border-style: none;
     border-radius: 1rem;
     padding:0.5rem ;
-    
-    margin-left: 0.5rem;
-    
+    margin-left: 0.5rem;  
     background-color:#01497c;
     
     
@@ -47,6 +45,65 @@
     background-color:#2a6f97;
     border-left: solid;
     border-bottom: solid;
+}
+.menu{
+    display:none;
+}
+.close{
+    display:none;
+}
+.divMenu{
+    align-self: center;
+}
+
+
+@media screen and (max-width:740px) 
+{
+   .activebtn{
+    display:block;
+    margin-right: 1rem;
+   }
+   .ulMenu{
+    position:absolute;
+   visibility:hidden;
+   
+    
+   }
+   
+   .activeul{
+    margin:none;
+    width:100%;
+    padding-left: 0;
+    flex-direction: column;
+    visibility: visible;  
+    top:3.3rem;
+    width: 100%;
+    transition: 300ms;
+   }
+   #li1{
+    margin-left: 0;
+    border-radius:0 ;
+    
+   
+   }
+   #li2{
+    margin-left: 0;
+    border-radius:0 ;
+   }
+   #li3{
+    margin-left: 0;
+    border-radius:0 ;
+   }
+   #li4{
+    margin-left: 0;
+    border-radius:0 ;
+   }
+   
+
+   
+    
+    
+    
 }
 
 

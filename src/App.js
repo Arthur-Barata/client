@@ -5,11 +5,11 @@ import Header from './Header';
 
 function App() {
 
-  const[ISBN,setISBN]=useState("")
-  const[title,settitle]=useState("")
-  const[author,setauthor]=useState("")
-  const[pages,setpages]=useState(0)
-  const[copies,setcopies]=useState(0)
+  const[ISBN,setISBN]=useState(null)
+  const[title,settitle]=useState(null)
+  const[author,setauthor]=useState(null)
+  const[pages,setpages]=useState(null)
+  const[copies,setcopies]=useState(null)
   const[ISBNc,setISBNc]=useState("")
   const[bookData,setbookData]=useState("")
 
@@ -25,6 +25,9 @@ function App() {
   
 
   const cadBook=()=>{
+
+   
+
     Axios.post("http://localhost:3001/cadastro",
     {ISBN:ISBN,
       title:title,
@@ -32,6 +35,13 @@ function App() {
       pages:pages,
       copies:copies
     }).then((response)=>{
+
+        setISBN(null)
+        settitle("")
+        setauthor(null)
+        setpages(null)
+        setcopies(null)
+     
       console.log(response.data)
       setCadAlert(response.data)
       setTimeout(()=>{setCadAlert("")},3000)
@@ -85,6 +95,7 @@ function App() {
         author:newAuthor,
         pages:newPages,
         copies:newCopies})
+        window.alert("livro Editado com sucesso")
       
      
       
@@ -111,6 +122,7 @@ function App() {
 
     Axios.delete(`http://localhost:3001/deletar/${ISBN}`)
     .then((response)=>{
+      window.alert("livro excluído com sucesso")
       
     })
 
@@ -195,7 +207,7 @@ function App() {
       <div className="book">
 
           <button id="btn-edit" onClick={editInput}>
-            <span><img src='../assets/edit.png'></img></span>
+            <span><img alt="edit" src='../assets/edit.png'></img></span>
           </button>
           <div className="book-title">
               <h4>{bookData.title}</h4>
