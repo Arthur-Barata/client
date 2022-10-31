@@ -1,0 +1,54 @@
+.imgh1{
+    display: flex;
+}
+
+.Header{
+    display: flex;
+    justify-content: space-between;
+    background-color:#61a5c2;
+    color:rgb(240, 240, 240, 1);
+    overflow: hidden;
+    
+}
+
+.Header img{
+    width: 3.5rem;
+    height:3.5rem;
+    display:inline-block;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    align-self: center;
+}
+
+.Header ul{
+    width: 40%;
+    justify-self: end;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 1rem;
+}
+.Header ul li {
+    
+    color: rgb(240, 240, 240, 1);
+    border-style: none;
+    border-radius: 1rem;
+    padding:0.5rem ;
+    
+    margin-left: 0.5rem;
+    
+    background-color:#01497c;
+    
+    
+}
+.Header ul li:hover{
+    color: white;
+    cursor: pointer;
+    background-color:#2a6f97;
+    border-left: solid;
+    border-bottom: solid;
+}
+
+
+
+
