@@ -35,6 +35,12 @@ function App() {
       console.log(response.data)
       setCadAlert(response.data)
       setTimeout(()=>{setCadAlert("")},3000)
+
+      let inp = document.getElementsByClassName("inp")
+    
+      for(let i=0;i<inp.length;i++){
+        inp[i].value=""
+      }
     })
   }
 
@@ -120,14 +126,18 @@ function App() {
         <h3>Digite os dados do livro a ser cadastrado</h3>
         <h5>{cadAlert}</h5>
         <input
+          className='inp'
           type="number" 
           name="ISBN" 
           placeholder="ISBN" 
           onChange={(event)=>{
             setISBN(event.target.value)
-          }}></input>
+          }}>
+
+        </input>
 
         <input 
+          className='inp'
           type="text" 
           name="title" 
           placeholder="Title" 
@@ -135,9 +145,12 @@ function App() {
             settitle(event.target.value)
             console.log(event.target.value)
            
-          }}></input>
+          }}>
+
+        </input>
 
         <input 
+        className='inp'
           type="text" 
           name="Author" 
           placeholder="Author"
@@ -146,6 +159,7 @@ function App() {
           }}></input>
 
         <input 
+        className='inp'
           type="number" 
           name="pages" 
           placeholder="Number of pages" onChange={(event)=>{
@@ -153,11 +167,15 @@ function App() {
           }}></input>
 
         <input 
+          className='inp'
           type="number" 
           name="copies" 
           placeholder="Number of copies" onChange={(event)=>{
             setcopies(event.target.value)
-          }}></input>
+          }}>
+
+        </input>
+
           <button onClick={cadBook}> Cadastrar</button>
           
       </div>
